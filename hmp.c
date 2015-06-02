@@ -1928,4 +1928,16 @@ void hmp_dirtyrate(Monitor *mon, const QDict *qdict)
     monitor_printf(mon, "%s\n", "Kashif");
     monitor_printf(mon, "%" PRId64 "\n", pdirtyrate);
 }
+void hmp_dirtyrateps(Monitor *mon, const QDict *qdict)
+{
+    uint64_t pdirtyrate = -1;
+    int64_t dirty_log_start;
+    pdirtyrate = get_dirty_pages();
+    dirty_log_start = qemu_clock_get_ms(QEMU_CLOCK_HOST);
+    while((qemu_clock_get_ms(QEMU_CLOCK_HOST) - dirty_log_start)<500){}
+    pdirtyrate = get_dirty_pages();
+    monitor_printf(mon, "%s\n", "PDR pps");
+    monitor_printf(mon, "%" PRId64 "\n", (pdirtyrate*2));
+    //monitor_printf(mon, "%" PRId64 "\n", (pdirtyrate)/((dirty_log_end - dirty_log_start)*1000));
+}
 

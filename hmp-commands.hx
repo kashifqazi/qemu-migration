@@ -1717,6 +1717,20 @@ Display the page dirty rate.
 ETEXI
 
     {
+        .name       = "dirtyrateps",
+        .args_type  = "",
+        .params     = "",
+        .help       = "display the pages dirtied per sec",
+        .mhandler.cmd = hmp_dirtyrateps,
+    },
+
+STEXI
+@item dirtyrate
+@findex dirtyrate
+Display the page dirty rate.
+ETEXI
+
+    {
         .name       = "info",
         .args_type  = "item:s?",
         .params     = "[subcommand]",
