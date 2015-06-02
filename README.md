@@ -24,6 +24,7 @@ dirtyrate works from QEMU monitor directly and also from libvirt by using virsh 
 
 
 @INITIAL MODIFICATIONS
+
 hmp.c
 + hmp_dirtyrate()
 hmp.h
@@ -42,4 +43,4 @@ monitor.h
 
 @TODO
 + add a command dirtyrateps that returns true dirty rate, i.e. the number of pages dirtied per second. 
-+- move prototype from monitor.h to somewhere more suitable 
++ move prototype from monitor.h to somewhere more suitable 
