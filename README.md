@@ -53,3 +53,4 @@ monitor.h
 @TODO
 + add a command dirtyrateps that returns true dirty rate, i.e. the number of pages dirtied per second. 
 + move prototype from monitor.h to somewhere more suitable 
++ add a command to directly start post-copy
