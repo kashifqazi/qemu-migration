@@ -27,8 +27,10 @@ dirtyrate works from QEMU monitor directly and also from libvirt by using virsh 
 
 hmp.c
 + hmp_dirtyrate()
+
 hmp.h
 + hmp_dirtyrate();
+
 hmp-commands.hx
 + new command dirtyrate
 
